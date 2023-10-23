@@ -12,7 +12,7 @@ class Bachelor {
   List<Gender> searchFor;
   String job;
   String description;
-  bool isFavorite;
+  bool favoris;
 
   Bachelor({
     required this.firstName,
@@ -22,14 +22,14 @@ class Bachelor {
     required this.searchFor,
     required this.job,
     required this.description,
-    this.isFavorite = false,
+    this.favoris = false,
   });
     void toggleFavorite() {
-    isFavorite = !isFavorite;
+    favoris = !favoris;
   }
 }
-List<Bachelor> favoriteBachelors = [];
-List<Bachelor> generateFakeBachelorData() {
+List<Bachelor> bachelorFavoris = [];
+List<Bachelor> generateurDataBachelor() {
   final faker = Faker();
 
   List<Bachelor> bachelorData = [];

@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bachelorList = generateFakeBachelorData();
+    final bachelorList = generateurDataBachelor();
 
     return MaterialApp(
       home: BachelorsMaster(bachelorList: bachelorList),

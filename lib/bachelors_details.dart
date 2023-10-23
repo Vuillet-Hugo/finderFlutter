@@ -15,16 +15,16 @@ class _BachelorDetailsState extends State<BachelorDetails> {
   void toggleFavorite() {
     setState(() {
       widget.bachelor.toggleFavorite();
-      if (widget.bachelor.isFavorite) {
-        favoriteBachelors.add(widget.bachelor);
+      if (widget.bachelor.favoris) {
+        bachelorFavoris.add(widget.bachelor);
       } else {
-        favoriteBachelors.remove(widget.bachelor);
+        bachelorFavoris.remove(widget.bachelor);
       }
-      showLikeNotification();
+      notifFavorite();
     });
   }
 
-  void showLikeNotification() {
+  void notifFavorite() {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Vous avez aimé ${widget.bachelor.firstName} ${widget.bachelor.lastName}'),
@@ -55,8 +55,8 @@ class _BachelorDetailsState extends State<BachelorDetails> {
             ElevatedButton(
               onPressed: toggleFavorite,
               child: Icon(
-                widget.bachelor.isFavorite ? Icons.favorite : Icons.favorite_border,
-                color: widget.bachelor.isFavorite ? const Color.fromARGB(255, 224, 11, 11) : null,
+                widget.bachelor.favoris ? Icons.favorite : Icons.favorite_border,
+                color: widget.bachelor.favoris ? const Color.fromARGB(255, 224, 11, 11) : null,
               ),
             ),
           ],

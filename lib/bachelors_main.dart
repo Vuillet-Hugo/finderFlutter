@@ -20,14 +20,14 @@ class BachelorsMaster extends StatelessWidget {
         itemCount: bachelorList.length,
         itemBuilder: (context, index) {
           final bachelor = bachelorList[index];
-          final isFavorite = favoriteBachelors.contains(bachelor);
+          final favoris = bachelorFavoris.contains(bachelor);
           return ListTile(
             title: Text('${bachelor.firstName} ${bachelor.lastName}'),
             leading: CircleAvatar(
               backgroundImage: AssetImage(bachelor
                   .avatar),
             ),
-                        trailing: isFavorite
+                        trailing: favoris
                 ? const Icon(Icons.favorite, color: Color.fromARGB(255, 255, 59, 59))
                 : const Icon(Icons.favorite_border),
             onTap: () {
